@@ -1,5 +1,6 @@
 'use strict'
 const findWinner = function (array) {
+// "O" Wins
   if (array[0] && array[1] && array[2] === 'O') {
     console.log('winner!')
   } else if (array[3] && array[4] && array[5] === 'O') {
@@ -16,9 +17,25 @@ const findWinner = function (array) {
     console.log('winner!')
   } else if (array[2] && array[4] && array[6] === 'O') {
     console.log('winner!')
+// "X" Wins
+  } else if (array[0] && array[1] && array[2] === 'X') {
+    console.log('winner!')
+  } else if (array[3] && array[4] && array[5] === 'X') {
+    console.log('winner!')
+  } else if (array[6] && array[7] && array[8] === 'X') {
+    console.log('winner!')
+  } else if (array[0] && array[3] && array[6] === 'X') {
+    console.log('winner!')
+  } else if (array[1] && array[4] && array[7] === 'X') {
+    console.log('winner!')
+  } else if (array[2] && array[5] && array[8] === 'X') {
+    console.log('winner!')
+  } else if (array[0] && array[4] && array[8] === 'X') {
+    console.log('winner!')
+  } else if (array[2] && array[4] && array[6] === 'X') {
+    console.log('winner!')
   }
 }
-console.log('winner-eh!')
 
 module.exports = {
   findWinner

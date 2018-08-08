@@ -7,10 +7,11 @@
 const XorO = require('./x-o-or-taken-logic.js')
 const declareWinner = require('./findWinner-if-else.js')
 
-const xO = false
 
 const gameLogic = function (xO, array, numZeroToEight) {
   XorO.playXorO(xO, array, numZeroToEight)
   declareWinner.findWinner(array)
 }
 console.log('logic-eh!')
+
+module.exports = gameLogic
