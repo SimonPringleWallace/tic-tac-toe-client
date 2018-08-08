@@ -1,4 +1,4 @@
-
+'use strict'
 const findWinner = function (array) {
   if (array[0] && array[1] && array[2] === 'O') {
     console.log('winner!')
@@ -18,6 +18,7 @@ const findWinner = function (array) {
     console.log('winner!')
   }
 }
+console.log('winner-eh!')
 
 module.exports = {
   findWinner
