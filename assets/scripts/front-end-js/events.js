@@ -9,7 +9,6 @@ const ui = require('./ui.js')
 const signUp = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
 
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -19,16 +18,24 @@ const signUp = function () {
 const signIn = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
 
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFail)
 }
 
+const signOut = function () {
+  event.preventDefault()
+
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 const handlers = function () {
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
+  $('#sign-out').on('click', signOut)
 }
 
 module.exports = {

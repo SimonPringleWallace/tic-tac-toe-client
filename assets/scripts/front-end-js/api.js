@@ -1,4 +1,5 @@
 'use strict'
+const store = require('../store.js')
 
 const signUp = function (data) {
   return $.ajax({
@@ -16,8 +17,18 @@ const signIn = function (data) {
     data
   })
 }
+const signOut = function () {
+  return $.ajax({
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/' + '/sign-out',
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  signOut
 }
