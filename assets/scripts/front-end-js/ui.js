@@ -6,8 +6,16 @@ const signUpSuccess = function () {
 const fail = function () {
   console.log('fail!')
 }
+const signInSuccess = function () {
+  console.log('Welcome!')
+}
+const signInFail = function () {
+  console.log('You lie! Please check your credentials and try again')
+}
 
 module.exports = {
   signUpSuccess,
-  fail
+  fail,
+  signInSuccess,
+  signInFail
 }
