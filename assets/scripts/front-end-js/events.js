@@ -32,10 +32,20 @@ const signOut = function () {
     .catch(ui.signOutFailure)
 }
 
+const changePW = function () {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+
+  api.changePW(data)
+    .then(ui.changePWSuccess)
+    .catch(ui.fail)
+}
+
 const handlers = function () {
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
   $('#sign-out').on('click', signOut)
+  $('#change-password').on('submit', changePW)
 }
 
 module.exports = {

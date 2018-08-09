@@ -20,6 +20,9 @@ const signOutSuccess = function () {
 const signOutFailure = function () {
   console.log('you will never leave me!')
 }
+const changePWSuccess = function () {
+  console.log('your password has changed')
+}
 
 module.exports = {
   signUpSuccess,
@@ -27,5 +30,6 @@ module.exports = {
   signInSuccess,
   signInFail,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  changePWSuccess
 }
