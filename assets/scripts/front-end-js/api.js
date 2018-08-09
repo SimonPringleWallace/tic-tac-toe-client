@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store.js')
-
+const config = require('../config.js')
 const signUp = function (data) {
   return $.ajax({
     url: 'https://tic-tac-toe-wdi.herokuapp.com/' + '/sign-up',
@@ -12,7 +12,7 @@ const signUp = function (data) {
 
 const signIn = function (data) {
   return $.ajax({
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/' + '/sign-in',
+    url: config.apiUrl + '/sign-in',
     method: 'POST',
     data
   })
