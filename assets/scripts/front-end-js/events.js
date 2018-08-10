@@ -2,7 +2,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-
+const gamePlay = require('./game-play/game-events.js')
 
 // handlers
 
@@ -55,6 +55,7 @@ const handlers = function () {
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
   $('#new-game').on('click', startGame)
+  $('div.box').on('click', gamePlay.squareIndex)
 }
 
 module.exports = {
