@@ -32,8 +32,8 @@ Submit detailed answers to the following in this file via a pull request:
       - For example:
            It has been said that Marie Antonette's famous qoute "let them eat cake"
            was mis-translated from "Qu'ils jouer de la brioche" or "let them
-           play tic-tac-toe" "la brioche" being the French name for the game
-           after the board's ressemblance to a sheet cake.
+           play tic-tac-toe", "la brioche" being the French name for the game
+           after the board's ressemblance to a sliced sheet cake.
 
 - How will you use version control to backup / track your project?
    -Often. Additionally, taking advantage of branching to test out new features
