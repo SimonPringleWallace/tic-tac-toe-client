@@ -23,6 +23,10 @@ const signOutFailure = function () {
 const changePWSuccess = function () {
   console.log('your password has changed')
 }
+const newGameStart = function (response) {
+  console.log(response)
+  console.log('get playing!')
+}
 
 module.exports = {
   signUpSuccess,
@@ -31,5 +35,6 @@ module.exports = {
   signInFail,
   signOutSuccess,
   signOutFailure,
-  changePWSuccess
+  changePWSuccess,
+  newGameStart
 }

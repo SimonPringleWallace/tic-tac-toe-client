@@ -41,11 +41,20 @@ const changePW = function () {
     .catch(ui.fail)
 }
 
+const startGame = function () {
+  event.preventDefault()
+
+  api.newGame()
+    .then(ui.newGameStart)
+    .catch(ui.fail)
+}
+
 const handlers = function () {
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
+  $('#new-game').on('click', startGame)
 }
 
 module.exports = {

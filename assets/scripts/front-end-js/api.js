@@ -40,10 +40,21 @@ const changePW = function (data) {
     }
   })
 }
+const newGame = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    data: '{}',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePW
+  changePW,
+  newGame
 }
