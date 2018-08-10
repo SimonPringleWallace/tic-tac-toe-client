@@ -56,13 +56,14 @@ const updateGame = function () {
     'game': {
       'cell': {
         'index': parseInt(this.id),
-        'value': 'o'
+        'value': gamePlay.toggleXandY()
       },
       'over': false
     }
   }
+  store.lastMove = data.game.cell.value
+  console.log(store.lastMove)
   data = JSON.stringify(data)
-
   api.updateGame(data)
     .then(ui.nextMove)
     .catch(ui.fail)

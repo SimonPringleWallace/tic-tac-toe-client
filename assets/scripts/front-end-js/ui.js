@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store.js')
+const gamePlay = require('./game-play/game-events.js')
 
 const signUpSuccess = function () {
   console.log('eh!')
@@ -29,17 +30,7 @@ const newGameStart = function (response) {
   console.log(store.game) // cells [] id over
 }
 const nextMove = function (response) {
-  for (let i = 8; i >= 0; i--) {
-    if (response.game.cells[i] === 'x') {
-      $('#' + [i]).html('X')
-      console.log([i])
-    } else if (response.game.cells[i] === 'o') {
-      $('#' + [i]).html('O')
-      console.log([i])
-    }
-  }
-  // $('#0').append('X')
-// $('#[response.value]')
+  gamePlay.addThingsToBoard(response)
 }
 
 module.exports = {
