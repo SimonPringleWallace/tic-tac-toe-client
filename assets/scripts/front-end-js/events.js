@@ -56,7 +56,7 @@ const updateGame = function () {
     'game': {
       'cell': {
         'index': parseInt(this.id),
-        'value': 'x'
+        'value': 'o'
       },
       'over': false
     }

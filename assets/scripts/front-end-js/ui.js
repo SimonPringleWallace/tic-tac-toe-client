@@ -26,9 +26,20 @@ const changePWSuccess = function () {
 const newGameStart = function (response) {
   console.log('get playing!')
   store.game = response.game
-  console.log(store.game.id)
+  console.log(store.game) // cells [] id over
 }
 const nextMove = function (response) {
+  for (let i = 8; i >= 0; i--) {
+    if (response.game.cells[i] === 'x') {
+      $('#' + [i]).html('X')
+      console.log([i])
+    } else if (response.game.cells[i] === 'o') {
+      $('#' + [i]).html('O')
+      console.log([i])
+    }
+  }
+  // $('#0').append('X')
+// $('#[response.value]')
 }
 
 module.exports = {
@@ -42,3 +53,5 @@ module.exports = {
   newGameStart,
   nextMove
 }
+// next take the response from the API, process it through win loss, and switch
+// players
