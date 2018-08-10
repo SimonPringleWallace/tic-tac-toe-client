@@ -2,6 +2,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('./../store.js')
 const gamePlay = require('./game-play/game-events.js')
 
 // handlers
@@ -49,13 +50,31 @@ const startGame = function () {
     .catch(ui.fail)
 }
 
+const updateGame = function () {
+  event.preventDefault()
+  let data = {
+    'game': {
+      'cell': {
+        'index': parseInt(this.id),
+        'value': 'x'
+      },
+      'over': false
+    }
+  }
+  data = JSON.stringify(data)
+
+  api.updateGame(data)
+    .then(ui.nextMove)
+    .catch(ui.fail)
+}
+
 const handlers = function () {
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
   $('#new-game').on('click', startGame)
-  $('div.box').on('click', gamePlay.squareIndex)
+  $('div.box').on('click', updateGame)
 }
 
 module.exports = {

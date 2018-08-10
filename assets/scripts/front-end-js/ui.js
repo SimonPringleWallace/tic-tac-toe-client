@@ -24,8 +24,11 @@ const changePWSuccess = function () {
   console.log('your password has changed')
 }
 const newGameStart = function (response) {
-  console.log(response)
   console.log('get playing!')
+  store.game = response.game
+  console.log(store.game.id)
+}
+const nextMove = function (response) {
 }
 
 module.exports = {
@@ -36,5 +39,6 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePWSuccess,
-  newGameStart
+  newGameStart,
+  nextMove
 }

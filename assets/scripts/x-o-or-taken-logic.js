@@ -1,5 +1,5 @@
 'use strict'
-const playXorO = function (xO, array, numZeroToEight) {
+const playXorO = function (reponse) {
   if (xO) {
     if (array[numZeroToEight] === '') {
       array.splice(numZeroToEight, 1, 'X')

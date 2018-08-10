@@ -51,10 +51,23 @@ const newGame = function () {
   })
 }
 
+const updateGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    data,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePW,
-  newGame
+  newGame,
+  updateGame
 }

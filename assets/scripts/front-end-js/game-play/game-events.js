@@ -1,7 +1,7 @@
 'Use Strict'
 
 const squareIndex = function (div) {
-  console.log(this.id)
+  return (this.id)
 }
 
 module.exports = {
