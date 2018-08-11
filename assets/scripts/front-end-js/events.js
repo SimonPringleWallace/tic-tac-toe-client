@@ -4,6 +4,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('./../store.js')
 const gamePlay = require('./game-play/game-events.js')
+const winTie = require('./../findWinner-if-else.js')
 
 // handlers
 
@@ -52,21 +53,27 @@ const startGame = function () {
 
 const updateGame = function () {
   event.preventDefault()
-  let data = {
-    'game': {
-      'cell': {
-        'index': parseInt(this.id),
-        'value': gamePlay.toggleXandY()
-      },
-      'over': false
+  // can I take all of the store.game info and use gamePlaytoggle xandO and do all the win logic add x or o to it ahead of time test, it for wins, then send the apprpiate info to the api?
+  if (store.game.cells[this.id] === '') {
+  // store the cells array coming back and then check it for a valid move before sening AJAX - something like this =  if (store.user.cells[this.id]) === '' {} else space taken
+    let data = {
+      'game': {
+        'cell': {
+          'index': parseInt(this.id),
+          'value': gamePlay.toggleXandO()
+        },
+        'over': winTie.isGameOver(this.id)
+      }
     }
+    store.lastMove = data.game.cell.value
+    // console.log(store.lastMove)
+    data = JSON.stringify(data)
+    api.updateGame(data)
+      .then(ui.nextMove)
+      .catch(ui.fail)
+  } else {
+    console.log('nope!')
   }
-  store.lastMove = data.game.cell.value
-  console.log(store.lastMove)
-  data = JSON.stringify(data)
-  api.updateGame(data)
-    .then(ui.nextMove)
-    .catch(ui.fail)
 }
 
 const handlers = function () {

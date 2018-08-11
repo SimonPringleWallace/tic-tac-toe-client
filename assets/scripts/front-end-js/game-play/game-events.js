@@ -10,7 +10,7 @@ const addThingsToBoard = function (response) {
     }
   }
 }
-const toggleXandY = function () {
+const toggleXandO = function () {
   let value = 'x'
   if (typeof store.lastMove === 'undefined') {
     value = 'x'
@@ -22,7 +22,18 @@ const toggleXandY = function () {
   return value
 }
 
+const isGameOver = function () {
+  store.game.cells.forEach(cell => {
+    if (cell === '') {
+      return false
+    } else {
+      return true
+    }
+  })
+}
+
 module.exports = {
   addThingsToBoard,
-  toggleXandY
+  toggleXandO,
+  isGameOver
 }

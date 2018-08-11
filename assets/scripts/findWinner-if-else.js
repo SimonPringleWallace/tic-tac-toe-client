@@ -1,42 +1,46 @@
 'use strict'
-const findWinner = function (array) {
-// "O" Winner
-  if (array[0] && array[1] && array[2] === 'O') {
-    console.log('O wins!')
-  } else if (array[3] && array[4] && array[5] === 'O') {
-    console.log('O wins!')
-  } else if (array[6] && array[7] && array[8] === 'O') {
-    console.log('O wins!')
-  } else if (array[0] && array[3] && array[6] === 'O') {
-    console.log('O wins!')
-  } else if (array[1] && array[4] && array[7] === 'O') {
-    console.log('O wins!')
-  } else if (array[2] && array[5] && array[8] === 'O') {
-    console.log('O wins!')
-  } else if (array[0] && array[4] && array[8] === 'O') {
-    console.log('O wins!')
-  } else if (array[2] && array[4] && array[6] === 'O') {
-    console.log('O wins!')
-// "X" Wins
-  } else if (array[0] && array[1] && array[2] === 'X') {
-    console.log('X wins!')
-  } else if (array[3] && array[4] && array[5] === 'X') {
-    console.log('X wins!')
-  } else if (array[6] && array[7] && array[8] === 'X') {
-    console.log('X wins!')
-  } else if (array[0] && array[3] && array[6] === 'X') {
-    console.log('X wins!')
-  } else if (array[1] && array[4] && array[7] === 'X') {
-    console.log('X wins!')
-  } else if (array[2] && array[5] && array[8] === 'X') {
-    console.log('X wins!')
-  } else if (array[0] && array[4] && array[8] === 'X') {
-    console.log('X wins!')
-  } else if (array[2] && array[4] && array[6] === 'X') {
-    console.log('X wins!')
-  }
-}
+const store = require('./store.js')
+const gamePlay = require('./front-end-js/game-play/game-events.js')
 
+const isGameOver = function (id) {
+  const lettervalue = gamePlay.toggleXandO()
+  store.game.cells.splice(id, 1, lettervalue)
+  console.log(store.game.cells)
+  let value = false
+  if (store.game.cells.includes('')) { // need to account for the fact that in the first few moves if the square are black they all equal eachother.
+    if (store.game.cells[0] === store.game.cells[1] && store.game.cells[1] === store.game.cells[2]) {
+      console.log(lettervalue + ' Wins!')
+      value = true
+    } else if (store.game.cells[3] === store.game.cells[4] && store.game.cells[4] === store.game.cells[5]) {
+      console.log(lettervalue + ' wins!')
+      value = true
+    } else if (store.game.cells[6] === store.game.cells[7] && store.game.cells[7] === store.game.cells[8]) {
+      console.log(lettervalue + ' wins!')
+      value = true
+    } else if (store.game.cells[0] === store.game.cells[3] && store.game.cells[3] === store.game.cells[6]) {
+      console.log(lettervalue + ' wins!')
+      value = true
+    } else if (store.game.cells[1] === store.game.cells[4] && store.game.cells[4] === store.game.cells[7]) {
+      console.log(lettervalue + ' wins!')
+      value = true
+    } else if (store.game.cells[2] === store.game.cells[5] && store.game.cells[5] === store.game.cells[8]) {
+      console.log(lettervalue + ' wins!')
+      value = true
+    } else if (store.game.cells[0] === store.game.cells[4] && store.game.cells[4] === store.game.cells[8]) {
+      console.log(lettervalue + ' wins!')
+      value = true
+    } else if (store.game.cells[2] === store.game.cells[4] && store.game.cells[4] === store.game.cells[6]) {
+      console.log(lettervalue + ' wins!')
+      value = true
+    } else {
+      value = false
+    }
+  } else if (store.game.cells.includes('') !== true) {
+    console.log('Tie!')
+    value = true
+  }
+  console.log(value)
+}
 module.exports = {
-  findWinner
+  isGameOver
 }

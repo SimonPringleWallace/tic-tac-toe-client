@@ -27,10 +27,12 @@ const changePWSuccess = function () {
 const newGameStart = function (response) {
   console.log('get playing!')
   store.game = response.game
-  console.log(store.game) // cells [] id over
+// console.log(store.game) // cells [] id over
 }
 const nextMove = function (response) {
+  store.game = response.game
   gamePlay.addThingsToBoard(response)
+  console.log(response)
 }
 
 module.exports = {
