@@ -1,5 +1,8 @@
 Submit detailed answers to the following in this file via a pull request:
 
+
+determine when the game is over, who is the winner, return past games and style.
+
 - A wireframe of what your game project will look like.
 - The data structure you plan to use.
      - Arrays and Objects
