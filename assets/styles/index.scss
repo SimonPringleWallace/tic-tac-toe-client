@@ -9,9 +9,21 @@ body {
   font-size: 8px;
   margin-top: -10px;
 }
+.container {
+ padding-top: 50px;
+}
+
+
+.row {
+  display: flex;
+  justify-content: center;
+}
 
 .box {
   border: 1px solid black;
   height: 100px;
-  width: 100px
+  width: 100px;
 }
+/*.row > div {
+  padding-top: 20px;
+}*/

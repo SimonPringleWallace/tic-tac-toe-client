@@ -27,6 +27,9 @@ const changePWSuccess = function () {
 const newGameStart = function (response) {
   console.log('get playing!')
   store.game = response.game
+  gamePlay.addThingsToBoard(response) //this and the change made to addthings to board, only work after a click.
+  $('#winbox').html('')
+  $('#board').show()
 // console.log(store.game) // cells [] id over
 }
 const nextMove = function (response) {
@@ -34,9 +37,12 @@ const nextMove = function (response) {
   gamePlay.addThingsToBoard(response)
   console.log(response)
   if (store.tie === true) {
-    $('#board').html('Tie!')
+    $('#board').hide()
+    $('#winbox').html('Tie!')
+    store.tie = false
   } else if (store.game.over === true) {
-    $('#board').html(store.lastMove + ' wins!')// this doesn't for a tie
+    $('#board').hide()
+    $('#winbox').html(store.lastMove + ' wins!')
   }
 }
 

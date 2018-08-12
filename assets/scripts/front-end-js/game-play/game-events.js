@@ -7,6 +7,8 @@ const addThingsToBoard = function (response) {
       $('#' + [i]).html('X')
     } else if (response.game.cells[i] === 'o') {
       $('#' + [i]).html('O')
+    } else {
+      $('#' + [i]).html('')
     }
   }
 }
