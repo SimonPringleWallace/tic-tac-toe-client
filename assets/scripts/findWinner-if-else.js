@@ -7,6 +7,7 @@ const isGameOver = function (id) {
   store.game.cells.splice(id, 1, lettervalue)
   console.log(store.game.cells)
   let value = false
+  let tie = false
   const checkForBlank = function (first, second, third) {
     if (first && second && third !== '') {
       value = true
@@ -36,7 +37,8 @@ const isGameOver = function (id) {
       value = false
     }
   } else if (store.game.cells.includes('') !== true) {
-    console.log('Tie!')
+    tie = true
+    store.tie = tie
     value = true
   }
   return value

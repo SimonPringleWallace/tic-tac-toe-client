@@ -33,7 +33,9 @@ const nextMove = function (response) {
   store.game = response.game
   gamePlay.addThingsToBoard(response)
   console.log(response)
-  if (store.game.over === true) {
+  if (store.tie === true) {
+    $('#board').html('Tie!')
+  } else if (store.game.over === true) {
     $('#board').html(store.lastMove + ' wins!')// this doesn't for a tie
   }
 }
