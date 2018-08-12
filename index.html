@@ -3,7 +3,7 @@
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -16,15 +16,17 @@
       <h3> Game of Your Childhood</h3>
       <h4>Game of Your Life</h4>
       <p class="sub-heading"> or <br> chess for those who never grew up </p>
-<form id="sign-up">
-       <input type="text" name="credentials[email]" placeholder="Email">
+<form id="sign-up" autocomplete="user-signup">
+  <input type="text" style="display: none">
+       <input type="text" name="credentials[email]" placeholder="Email" autocomplete="user-mail">
        <input type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
        <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
        <button type="submit"> create account!</button>
 </form>
 <form id="sign-in">
+  <input type="text" style="display:none">
        <input type="text" name="credentials[email]" placeholder="Email">
-       <input type="password" name="credentials[password]" placeholder="Password">
+       <input type="password" name="credentials[password]" placeholder="Password" autocomplete="arrrgg">
        <button type="submit"> Get Playin'!</button>
 </form>
 <form id="change-password">
@@ -39,7 +41,7 @@
        <div id="winbox"></div>
 
        <div id="board">
-         <div class="container" align="center">
+         <div class="container">
             <div class='row'>
               <div class="col-xs-2 col-md-4 box" id="0"><p></p></div>
               <div class="col-xs-2 col-md-4 box" id="1"></div>

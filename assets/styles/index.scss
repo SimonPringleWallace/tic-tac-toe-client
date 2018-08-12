@@ -3,6 +3,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   text-align: center;
+  margin-top: 50px;
+  background-color:#3973ac;
+  color: #FFFFFF;
+  font-family: 'Racing Sans One', cursive;
 }
 
 .sub-heading {
@@ -11,6 +15,17 @@ body {
 }
 .container {
  padding-top: 50px;
+}
+
+form {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+h3 {
+  margin-top: -10px;
 }
 
 

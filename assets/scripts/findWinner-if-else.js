@@ -5,7 +5,6 @@ const gamePlay = require('./front-end-js/game-play/game-events.js')
 const isGameOver = function (id) {
   const lettervalue = gamePlay.toggleXandO()
   store.game.cells.splice(id, 1, lettervalue)
-  console.log(store.game.cells)
   let value = false
   let tie = false
   const checkForBlank = function (first, second, third) {
