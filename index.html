@@ -82,8 +82,37 @@
 
  <button id="new-game"> Start! </button>
 
+
+
 <div class="menu">
-  <button id="past-games">Previous Conquests</button>
+
+  <!-- Previous Conquests -->
+
+  <!-- Button trigger modal -->
+  <button type="button" id="past-games-modal-button" data-toggle="modal" data-target="#previous-conquests">
+    Previous Conquests
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="previous-conquests" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="previous-conquests"> Previous Conquests</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul id="games-holder"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Change Password Modal -->
 
   <button type="button" id="change-password-modal-button" class="btn-primary" data-toggle="modal" data-target="#change-password-modal">
@@ -150,6 +179,5 @@
             </div>
           </div>
       </div>
-      <ul id="games-holder"></ul>
     </body>
 </html>

@@ -9,12 +9,14 @@ const winTie = require('./../findWinner-if-else.js')
 // handlers
 
 const signUp = function () {
-  event.preventDefault()
   const data = getFormFields(event.target)
 
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.fail)
+  event.preventDefault()
+  $('#sign-up-modal').modal('hide')
+  return false
 }
 
 const signIn = function () {
@@ -24,6 +26,8 @@ const signIn = function () {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFail)
+  $('#sign-in-modal').modal('hide')
+  return false
 }
 
 const signOut = function () {
@@ -41,6 +45,8 @@ const changePW = function () {
   api.changePW(data)
     .then(ui.changePWSuccess)
     .catch(ui.fail)
+  $('#change-password-modal').modal('hide')
+  return false
 }
 
 const startGame = function () {
@@ -86,39 +92,27 @@ const getPastGames = function () {
     .then(ui.pastGames)
     .catch(ui.fail)
 }
-const hideSignUp = function () {
-  event.preventDefault()
-  $('#sign-up-modal').modal('hide')
-  return false
-}
 
-const hideSignIn = function () {
-  event.preventDefault()
-  $('#sign-in-modal').modal('hide')
-  return false
-}
-const hideChangePassword = function () {
-  event.preventDefault()
-  $('#change-password-modal').modal('hide')
-  return false
-}
 const hideRudeness = function () {
   event.preventDefault()
   $('#winbox').html('')
 }
 
+const wipeGames = function () {
+  event.preventDefault()
+  $('#games-holder').html('')
+}
+
 const handlers = function () {
   $('#sign-in-modal-button').on('click', hideRudeness)
   $('#sign-up').on('submit', signUp)
-  $('#sign-up').on('submit', hideSignUp)
   $('#sign-in').on('submit', signIn)
-  $('#sign-in').on('submit', hideSignIn)
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
-  $('#change-password').on('submit', hideChangePassword)
   $('#new-game').on('click', startGame)
   $('div.box').on('click', updateGame)
-  $('#past-games').on('click', getPastGames)
+  $('#past-games-modal-button').on('click', getPastGames)
+  $('.close').on('click', wipeGames)
 }
 
 module.exports = {

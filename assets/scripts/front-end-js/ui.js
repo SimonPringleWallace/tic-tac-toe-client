@@ -19,7 +19,7 @@ const signInSuccess = function (response) {
   $('#winbox').html('')
   $('#sign-in input').val('')
   $('#sign-in-modal-button, #sign-up-modal-button').hide()
-  $('#sign-out, #new-game, #past-games, #change-password-modal-button').show()
+  $('#sign-out, #new-game, #past-games-modal-button, #change-password-modal-button').show()
   $('#fail').hide()
 
   store.user = response.user
@@ -28,7 +28,7 @@ const signInFail = function () {
   $('#winbox').html('You lie! <br> Please check your credentials and try again')
 }
 const signOutSuccess = function () {
-  $('#board, #sign-out, #past-games, #fail, #new-game, #change-password-modal-button').hide()
+  $('#board, #sign-out, #past-games-modal-button, #fail, #new-game, #change-password-modal-button').hide()
   $('#winbox').html('')
   $('#games-holder').html('')
   $('#sign-in-modal-button, #sign-up-modal-button').show()
@@ -49,8 +49,8 @@ const newGameStart = function (response) {
   $('#fail').hide()
 }
 const pastGames = function (response) {
-  response.games.forEach(game => {
-    $('#games-holder').append(`<li> ${game.cells} </li>`)
+  response.games.forEach(function (game, index) {
+    $('#games-holder').append(`<li> Game ${index} ${game.cells} </li>`)
   })
 }
 const nextMove = function (response) {
