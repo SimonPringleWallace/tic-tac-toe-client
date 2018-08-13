@@ -39,6 +39,10 @@ form > input {
   border-radius: 6px;
 }
 
+h1 {
+  margin-top: -10px;
+}
+
 .home {
   display: flex;
   margin-top: 30px;
@@ -78,6 +82,8 @@ form > input {
 #new-game{
   clear: left;
   margin-bottom: -30px;
+  height: 50px;
+  font-size:30px;
 }
 #fail, #games-holder{
   clear:right;
