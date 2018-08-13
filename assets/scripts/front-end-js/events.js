@@ -66,7 +66,6 @@ const updateGame = function () {
       }
     }
     store.lastMove = data.game.cell.value
-    // console.log(store.lastMove)
     data = JSON.stringify(data)
     api.updateGame(data)
       .then(ui.nextMove)
@@ -87,10 +86,23 @@ const getPastGames = function () {
     .then(ui.pastGames)
     .catch(ui.fail)
 }
+const hideSignUp = function () {
+  event.preventDefault()
+  $('#sign-up-modal').modal('hide')
+  return false
+}
+
+const hideSignIn = function () {
+  event.preventDefault()
+  $('#sign-in-modal').modal('hide')
+  return false
+}
 
 const handlers = function () {
   $('#sign-up').on('submit', signUp)
+  $('#sign-up').on('submit', hideSignUp)
   $('#sign-in').on('submit', signIn)
+  $('#sign-in').on('submit', hideSignIn)
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
   $('#new-game').on('click', startGame)

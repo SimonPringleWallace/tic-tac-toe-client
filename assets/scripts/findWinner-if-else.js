@@ -10,7 +10,6 @@ const isGameOver = function (id) {
   const checkForBlank = function (first, second, third) {
     if (first && second && third !== '') {
       value = true
-      console.log(lettervalue + 'Wins!')
     } else {
       value = false
     }

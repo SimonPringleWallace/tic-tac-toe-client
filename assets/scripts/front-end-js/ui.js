@@ -4,18 +4,19 @@ const gamePlay = require('./game-play/game-events.js')
 
 const signUpSuccess = function () {
   $('#sign-up input').val('')
-  $('#sign-up').hide()
+  $('#sign-up-modal-button').hide()
   $('#winbox').html('Welcome! <br> What are you waiting for? <br> Sign in!')
   $('#fail').hide()
-
 }
+
 const fail = function () {
   $('#fail').show()
 }
+
 const signInSuccess = function (response) {
   $('#winbox').html('')
   $('#sign-in input').val('')
-  $('#sign-in, #sign-up').hide()
+  $('#sign-in-modal-button, #sign-up-modal-button').hide()
   $('#sign-out, #new-game, #past-games, #change-password').show()
   $('#fail').hide()
 
@@ -28,13 +29,13 @@ const signOutSuccess = function () {
   $('#board, #sign-out, #past-games, #fail, #new-game, #change-password').hide()
   $('#winbox').html('')
   $('#games-holder').html('')
-  $('#sign-in, #sign-up').show()
+  $('#sign-in-modal-button, #sign-up-modal-button').show()
 }
 const signOutFailure = function () {
   $('#winbox').html('You will never leave me! <br> Sign out failed, please try again.')
 }
 const changePWSuccess = function () {
-  console.log('your password has changed')
+  $('#winbox').html('your password has changed')
 }
 const newGameStart = function (response) {
   $('#winbox').html("get playin'!")
@@ -46,7 +47,6 @@ const newGameStart = function (response) {
   $('#fail').hide()
 }
 const pastGames = function (response) {
-  console.log(response.games)
   response.games.forEach(game => {
     $('#games-holder').append(`<li> ${game.cells} </li>`)
   })
@@ -58,12 +58,10 @@ const nextMove = function (response) {
   $('#fail').hide()
   $('#games-holder').html('')
   if (store.tie === true) {
-    $('#board').hide()
     $('#winbox').html('Tie!')
     store.tie = false
     store.lastMove = undefined
   } else if (store.game.over === true) {
-    // $('#board').hide()
     $('#winbox').html(store.lastMove + ' wins!')
     store.lastMove = undefined
   }
