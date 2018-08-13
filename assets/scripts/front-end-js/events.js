@@ -54,7 +54,7 @@ const startGame = function () {
 const updateGame = function () {
   event.preventDefault()
   // can I take all of the store.game info and use gamePlaytoggle xandO and do all the win logic add x or o to it ahead of time test, it for wins, then send the apprpiate info to the api?
-  if (store.game.cells[this.id] === '') {
+  if (store.game.cells[this.id] === '' && store.game.over === false) {
   // store the cells array coming back and then check it for a valid move before sening AJAX - something like this =  if (store.user.cells[this.id]) === '' {} else space taken
     let data = {
       'game': {
@@ -72,7 +72,12 @@ const updateGame = function () {
       .then(ui.nextMove)
       .catch(ui.fail)
   } else {
-    console.log('nope!')
+    const textBox = $('#winbox')
+    if (store.game.over === true) {
+      textBox.html("I know it's hard, but the game's over, click 'start' to play again!")
+    } else if (store.game.cells[this.id] !== '') {
+      textBox.html('Fool! Does that space look blank to you?')
+    }
   }
 }
 

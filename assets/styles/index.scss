@@ -4,13 +4,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   text-align: center;
   margin-top: 50px;
-  background-color:#3973ac;
+  background-color:#314f6f;
   color: #FFFFFF;
   font-family: 'Racing Sans One', cursive;
 }
 
 .sub-heading {
-  font-size: 8px;
+  font-size: 18px;
   margin-top: -10px;
 }
 .container {
@@ -19,15 +19,36 @@ body {
 
 form {
   font-family: sans-serif;
+  color: black;
+}
+form > input {
+  border-radius: 6px;
+}
+button {
+  color: white;
+  background-color: #3973ac;
+  font-family: 'Racing Sans One', cursive;
+  border-radius: 6px;
+  height: 35px;
+  width: relative;
+  font-size: 20px;
+
+}
+#winbox {
+  font-size: 30px;
+  height: 50px;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 100px;
 }
 h3 {
   margin-top: -10px;
+  font-size: 30px;
 }
-
+h4 {
+  font-size: 25px;
+}
 
 .row {
   display: flex;
@@ -35,10 +56,9 @@ h3 {
 }
 
 .box {
-  border: 1px solid black;
+  padding-top: 15px;
   height: 100px;
   width: 100px;
+  font-size: 50px;
+  border: 3px solid black;
 }
-/*.row > div {
-  padding-top: 20px;
-}*/

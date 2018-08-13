@@ -29,19 +29,23 @@ const changePWSuccess = function () {
 const newGameStart = function (response) {
 $('#winbox').html("get playin'!")
   store.game = response.game
+  store.lastMove = undefined
   gamePlay.addThingsToBoard(response)
   $('#board').show()
 }
 const nextMove = function (response) {
   store.game = response.game
   gamePlay.addThingsToBoard(response)
+  $('#winbox').html('')
   if (store.tie === true) {
-    $('#board').hide()
+    // $('#board').hide()
     $('#winbox').html('Tie!')
     store.tie = false
+    store.lastMove = undefined
   } else if (store.game.over === true) {
-    $('#board').hide()
+    // $('#board').hide()
     $('#winbox').html(store.lastMove + ' wins!')
+    store.lastMove = undefined
   }
 }
 

@@ -24,18 +24,7 @@ const toggleXandO = function () {
   return value
 }
 
-const isGameOver = function () {
-  store.game.cells.forEach(cell => {
-    if (cell === '') {
-      return false
-    } else {
-      return true
-    }
-  })
-}
-
 module.exports = {
   addThingsToBoard,
-  toggleXandO,
-  isGameOver
+  toggleXandO
 }
