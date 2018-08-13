@@ -97,14 +97,25 @@ const hideSignIn = function () {
   $('#sign-in-modal').modal('hide')
   return false
 }
+const hideChangePassword = function () {
+  event.preventDefault()
+  $('#change-password-modal').modal('hide')
+  return false
+}
+const hideRudeness = function () {
+  event.preventDefault()
+  $('#winbox').html('')
+}
 
 const handlers = function () {
+  $('#sign-in-modal-button').on('click', hideRudeness)
   $('#sign-up').on('submit', signUp)
   $('#sign-up').on('submit', hideSignUp)
   $('#sign-in').on('submit', signIn)
   $('#sign-in').on('submit', hideSignIn)
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
+  $('#change-password').on('submit', hideChangePassword)
   $('#new-game').on('click', startGame)
   $('div.box').on('click', updateGame)
   $('#past-games').on('click', getPastGames)

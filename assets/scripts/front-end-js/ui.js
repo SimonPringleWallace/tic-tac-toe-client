@@ -1,3 +1,5 @@
+// for trivia, create an array that has numbers added to it after each click, based off of the length display different trivia, len = 1 display id 1 etc. at end of game, reset the array.
+
 'use strict'
 const store = require('../store.js')
 const gamePlay = require('./game-play/game-events.js')
@@ -17,7 +19,7 @@ const signInSuccess = function (response) {
   $('#winbox').html('')
   $('#sign-in input').val('')
   $('#sign-in-modal-button, #sign-up-modal-button').hide()
-  $('#sign-out, #new-game, #past-games, #change-password').show()
+  $('#sign-out, #new-game, #past-games, #change-password-modal-button').show()
   $('#fail').hide()
 
   store.user = response.user
@@ -26,7 +28,7 @@ const signInFail = function () {
   $('#winbox').html('You lie! <br> Please check your credentials and try again')
 }
 const signOutSuccess = function () {
-  $('#board, #sign-out, #past-games, #fail, #new-game, #change-password').hide()
+  $('#board, #sign-out, #past-games, #fail, #new-game, #change-password-modal-button').hide()
   $('#winbox').html('')
   $('#games-holder').html('')
   $('#sign-in-modal-button, #sign-up-modal-button').show()
