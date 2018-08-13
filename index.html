@@ -5,7 +5,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -15,9 +14,8 @@
       <h3> Game of Your Childhood</h3>
       <h4>Game of Your Life</h4>
       <p class="sub-heading"> or <br> chess for those who never grew up </p>
-<form id="sign-up" autocomplete="user-signup">
-  <input type="text" style="display: none">
-       <input type="text" name="credentials[email]" placeholder="Email" autocomplete="user-mail">
+<form id="sign-up">
+       <input type="text" name="credentials[email]" placeholder="Email">
        <input type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
        <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
        <button type="submit"> create account!</button>
@@ -25,7 +23,7 @@
 <form id="sign-in">
   <input type="text" style="display:none">
        <input type="text" name="credentials[email]" placeholder="Email">
-       <input type="password" name="credentials[password]" placeholder="Password" autocomplete="arrrgg">
+       <input type="password" name="credentials[password]" placeholder="Password">
        <button type="submit"> Get Playin'!</button>
 </form>
 <form id="change-password">
@@ -37,7 +35,16 @@
        <button id="sign-out"> Sign Out! </button>
 
        <button id="new-game"> Start! </button>
+
+       <button id="past-games">Previous Conquests</button>
+
        <div id="winbox"></div>
+
+       <div id="fail">
+         <p> I screwed up.</p>
+         <img src='https://i.imgur.com/luN2Lwj.jpg' alt="boom!">
+         <p> Please try again.</p>
+      </div>
 
        <div id="board">
          <div class="container">
@@ -58,5 +65,6 @@
             </div>
           </div>
       </div>
+      <ul id="games-holder"></ul>
     </body>
 </html>

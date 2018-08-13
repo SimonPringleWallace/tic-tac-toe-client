@@ -63,11 +63,23 @@ const updateGame = function (data) {
   })
 }
 
+const getPastGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games?over=true',
+    method: 'GET',
+    data: '{}',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePW,
   newGame,
-  updateGame
+  updateGame,
+  getPastGames
 }

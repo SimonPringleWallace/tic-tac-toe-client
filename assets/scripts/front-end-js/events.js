@@ -80,6 +80,13 @@ const updateGame = function () {
     }
   }
 }
+const getPastGames = function () {
+  event.preventDefault()
+
+  api.getPastGames()
+    .then(ui.pastGames)
+    .catch(ui.fail)
+}
 
 const handlers = function () {
   $('#sign-up').on('submit', signUp)
@@ -88,6 +95,7 @@ const handlers = function () {
   $('#change-password').on('submit', changePW)
   $('#new-game').on('click', startGame)
   $('div.box').on('click', updateGame)
+  $('#past-games').on('click', getPastGames)
 }
 
 module.exports = {
