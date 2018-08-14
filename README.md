@@ -15,7 +15,7 @@
 
   One of the greatest challenges in the early part of this process was
   managing the calls to the API and staying one move ahead of the API in order
-  to be able to declare a game either over, or still in progress. The logic for this can be found in [`findWinner-if-else.js`](findWinner-if-else.js). Only once the game's logic was proven in the most primitive of UIs did the project move into the design
+  to be able to declare a game either over, or still in progress. The logic for this can be found in [`findWinner-if-else.js`]. Only once the game's logic was proven in the most primitive of UIs did the project move into the design
   phase, trading out console.logs for JQuery activated text through DOM
   manipulation and generic HTML buttons and inputs for Bootstrap Modals.
 
