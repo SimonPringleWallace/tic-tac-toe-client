@@ -27,6 +27,7 @@ const signInSuccess = function (response) {
 }
 const signInFail = function () {
   $('#winbox').html('You lie! <br> Please check your credentials and try again')
+  $('#sign-in input').val('')
 }
 const signOutSuccess = function () {
   $('#board, #sign-out, #past-games-modal-button, #fail, #new-game, #change-password-modal-button').hide()
@@ -36,6 +37,7 @@ const signOutSuccess = function () {
 }
 const signOutFailure = function () {
   $('#winbox').html('You will never leave me! <br> Sign out failed, please try again.')
+  $('#sign-out input').val('')
 }
 const changePWSuccess = function () {
   $('#change-password input').val('')
@@ -51,9 +53,13 @@ const newGameStart = function (response) {
   $('#fail').hide()
 }
 const pastGames = function (response) {
-  response.games.forEach(function (game, index) {
-    $('#games-holder').append(`<li> Game ${index} ${game.cells} </li>`)
-  })
+  if (response.games.length === 0) {
+    $('#games-holder').append(`<li> You have no previous conquests <br> get playin'! </li>`)
+  } else {
+    response.games.forEach(function (game, index) {
+      $('#games-holder').append(`<li> Game ${index} ${game.cells} </li>`)
+    })
+  }
 }
 const nextMove = function (response) {
   store.game = response.game

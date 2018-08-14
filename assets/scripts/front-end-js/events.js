@@ -46,6 +46,7 @@ const changePW = function () {
     .then(ui.changePWSuccess)
     .catch(ui.fail)
   $('#change-password-modal').modal('hide')
+  $('#change-password input').val('')
   return false
 }
 
