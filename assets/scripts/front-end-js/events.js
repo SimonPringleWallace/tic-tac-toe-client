@@ -96,6 +96,7 @@ const getPastGames = function () {
 const hideRudeness = function () {
   event.preventDefault()
   $('#winbox').html('')
+  $('#fail').hide()
 }
 
 const wipeGames = function () {
@@ -109,6 +110,7 @@ const handlers = function () {
   $('#sign-in').on('submit', signIn)
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
+  $('#change-password-modal-button').on('click', hideRudeness)
   $('#new-game').on('click', startGame)
   $('div.box').on('click', updateGame)
   $('#past-games-modal-button').on('click', getPastGames)
