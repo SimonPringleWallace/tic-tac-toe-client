@@ -6,28 +6,28 @@
   snarky message to keep things light while you're doing battle with your
   opponent.
 
-  Itegrating Tic Tac Toe with an API presents an abundance of logic challenges  that wouldn't necessarily exist in a game without an API connection. Due to
+  Integrating Tic Tac Toe with an API presents an abundance of logic challenges  that wouldn't necessarily exist in a game without an API connection. Due to
   this, development centered on AJAX and Javascript logic in the beginning
-  stages with the focus one solving one specific problem at a time before
+  stages with the focus on solving one specific problem at a time before
   linking the solutions together into a cohesive program. Effort was also made
   to refactor code throughout the process to maintatin an organized code base.
   This work continues.
 
   One of the greatest challenges in the early part of this process was
   managing the calls to the API and staying one move ahead of the API in order
-  to be able to declare a game either over, or still in progress. The logic for this can be found in 'findWinner-if-else.js'. Only once the game's logic was proven in the most primitive of UIs did the project moved into the design
+  to be able to declare a game either over, or still in progress. The logic for this can be found in [findWinner-if-else.js](tic-tac-toe-client/assets/scripts/findWinner-if-else.js). Only once the game's logic was proven in the most primitive of UIs did the project move into the design
   phase, trading out console.logs for JQuery activated text through DOM
   manipulation and generic HTML buttons and inputs for Bootstrap Modals.
 
 # Future Work
   Having created the basic structure of the game, there are still several
-  defeciencies sytlistically that need to be addressed, they are as follows:
+  deficiencies stylistically that need to be addressed, they are as follows:
 
   - The board itself needs to be raised slighly higher into the page.
-    Currently, the board space and the div above it (#winbox) compete with the Modal buttons on the right of the screen, this could possible be solved be wrapping the two sets on elements in divs and setting them to be inline elements, in either case, the space between the 'start' button and board itself should be.
+    Currently, the board space and the div above it (#winbox) compete with the Modal buttons on the right of the screen, this could possibly be solved by wrapping the two sets of elements in divs and setting them to be inline elements. In either case, the space between the 'start' button and board itself should be smaller.
 
  - Moblie responsiveness. As it stands currently, the mobile experience is not
-   ideal but is workable. Furture iterations of this application should make
+   ideal but is workable. Future iterations of this application should make
    allowances for users on different screen sizes to provide improved UX.
 
  - I had hoped to be able to include an option to enable tic-tac-trivia, in
