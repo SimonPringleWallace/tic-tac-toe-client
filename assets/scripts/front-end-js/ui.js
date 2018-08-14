@@ -12,6 +12,7 @@ const signUpSuccess = function () {
 }
 
 const fail = function () {
+  $('#winbox').html('')
   $('#fail').show()
 }
 
@@ -37,6 +38,7 @@ const signOutFailure = function () {
   $('#winbox').html('You will never leave me! <br> Sign out failed, please try again.')
 }
 const changePWSuccess = function () {
+  $('#change-password input').val('')
   $('#winbox').html('your password has changed')
 }
 const newGameStart = function (response) {

@@ -1,54 +1,67 @@
-Submit detailed answers to the following in this file via a pull request:
+# How Did This Happen?
+  Tic Tac Toe - Game of Your Childhood, Game of Your Life, is a single page
+  application born out of an assignment for General Assembly's Web Development
+  Immersive program. Utilzing a range highly accessible technologies, this Tic
+  Tac Toe game provides smooth game play, API integration, and the occasional
+  snarky message to keep things light while you're doing battle with your
+  opponent.
+
+  Itegrating Tic Tac Toe with an API presents an abundance of challenges in logic
+  that wouldn't necessarily exist in a game without an API connection. Due to
+  this, development centered on AJAX and Javascript logic in the beginning
+  stages with the focus one solving one specific problem at a time, before
+  linking the solutions together into a cohesive program. Effort was also made
+  to regactor code throughout the process to maintatin an organized code base.
+  This work continues.
+
+  One of the greatest challenges in the early part of this process was
+  managing the calls to the API and staying one move ahead of it in order to
+  be able to declare a game over or still in progress. The logic for this can
+  be found in 'findWinner-if-else.js'. Only once the game's logic was proven
+  in the most primitive of UIs did the project moved into the design phase,
+  trading out console.logs for JQuery activated text and generic html buttons
+  for Bootstrap Modals.
+
+# Future Work
+  Having created the basic structure of the game, there are still several
+  defeciencies sytlistically that need to be addressed, they are as follows:
+
+  - the board needs to be raised slighly higher into the page. Currently, the
+   board space and the div above it (#winbox) compete with the Modal buttons on
+   the right of the screen, this could possible be solved be wrapping the two
+   sets on elements in divs and setting them to be inline elements, in either
+   case, the space between the 'start' button and board itself should be
+
+ - Moblie responsiveness- As it stands currently the mobile experience is not
+   ideal but is workable. Furture iterations of this application should make
+   allowances for users on different screen sizes.
+
+ - I had hoped to be able to include an option to enable tic-tac-trivia, in
+   the form of divs that would float up from the bottom of the screen on each
+   move. This feature will be added in the comming weeks.
 
 
-determine when the game is over, who is the winner, return past games and style.
+# Wireframes and User Stories
 
-- A wireframe of what your game project will look like.
-- The data structure you plan to use.
-     - Arrays and Objects
-- How you will represent the game board in JS.
-     - in JS the board will be represented by an array in the API as a user clicks on
-       on one of the divs making up the board in the html, the array will be
-       populated with either a 1(x) or a 0(o) in the appropriate index,
-       corresponding to the square clicked. A seperate piece of JS will
-       examine the response from the API and determine whether or not the Game
-       has been won. If this is true, JS will end the game and declare a winner,
-      If not, JS will delcare a tie after 9 moves or a win whenever the
-      appropriate conditions are met.
-- How you plan to approach this project.
-     - step-by-step with a focus towards building the MVP before moving on to
-        anything else.
-        - What this means
-          - Build the curl scripts
-          - Focus on making the logic for the game work first
-            -Within this, focus on adding clicks to an array, then building
-            out the logic to make the game istelf work
-          - Next, focus on the logic for user sign up and getting that to
-          - function along with the basic TTT board itself,
-          - link these two pieces up with the API
-          - After this is achieved, move on to making things pretty and clever.
-- 4-8 user stories for your game project.
-- How you plan to keep your code modular.
-   - refactor to keep the user experience and back end as seperate as possible,
-- What creative spin will you add to your project?
-   - TTT trivia that refreshes everytime a new move is played (if there's time)
-      - For example:
-           It has been said that Marie Antonette's famous qoute "let them eat cake"
-           was mis-translated from "Qu'ils jouer de la brioche" or "let them
-           play tic-tac-toe", "la brioche" being the French name for the game
-           after the board's ressemblance to a sliced sheet cake.
+ - [Wireframe for pre sign-in page](https://imgur.com/JObXRu4)
+ - [Wireframe for post sign-in page](https://imgur.com/2E2xegT)
 
-- How will you use version control to backup / track your project?
-   -Often. Additionally, taking advantage of branching to test out new features
-   in a low-risk way and merging these features back into the master branch as
-   they finish development
-- What additional features will you build if you have extra time?
-  - multiplayer, leader board of who had the most wins.
-User Stories -
-    As a user, I want to play tic-tac-toe, but also get a couple of laughs along
-    the way. I should be able to sign-up, sign-in and, play my game and win or
-    lose.
-    As a developer - I want a modular code base where bugs will be easy to
-    indentify and updates are easy to integrate
-    As a power user -  I want want to be able to keep track of how many games
-    I've won and be able to play many games, seamlessly.
+ - User Stories:
+  - A user should be able to sign-up, sign-in with the user name and password
+    they just  created, play my game and either win or lose.
+  - As a power user - I want want to be able to keep track of how many games
+    I've won, how many I've played and be able to play many games, seamlessly.
+
+
+
+
+# Technologies Used
+
+-Javascript
+-AJAX
+-JQuery
+-Grunt
+-Twitter Bootstrap
+-Git and GitHub
+-HTML
+-CSS
