@@ -55,7 +55,7 @@ const newGameStart = function (response) {
 }
 const pastGames = function (response) {
   if (response.games.length === 0) {
-    $('#games-holder').append(`<li> You have no previous conquests <br> get playin'! </li>`)
+    $('#games-holder').html(`<li> You have no previous conquests <br> get playin'! </li>`)
   } else {
     response.games.forEach(function (game, index) {
       $('#games-holder').append(`<li> Game ${index} ${game.cells} </li>`)
