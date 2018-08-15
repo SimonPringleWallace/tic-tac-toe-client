@@ -120,7 +120,7 @@ const handlers = function () {
   $('#new-game').on('click', startGame)
   $('div.box').on('click', updateGame)
   $('#past-games-modal-button').on('click', getPastGames)
-  $('.close, .close-btn').on('click', wipeGames)
+  $('#previous-conquests').on('hidden.bs.modal', wipeGames)
   $('#change-password-modal, #sign-in-modal, #sign-up-modal').on('hidden.bs.modal', clearOnClose)
 }
 
