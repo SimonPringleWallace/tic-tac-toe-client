@@ -35,6 +35,7 @@ const signOutSuccess = function () {
   $('#winbox').html('')
   $('#games-holder').html('')
   $('#sign-in-modal-button, #sign-up-modal-button').show()
+  $('input').val('')
 }
 const signOutFailure = function () {
   $('#winbox').html('You will never leave me! <br> Sign out failed, please try again.')

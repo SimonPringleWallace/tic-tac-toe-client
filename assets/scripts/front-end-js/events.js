@@ -105,6 +105,10 @@ const wipeGames = function () {
   $('#games-holder').html('')
 }
 
+const clearOnClose = function () {
+  $('input').val('')
+}
+
 const handlers = function () {
   $('#sign-in-modal-button').on('click', hideRudeness)
   $('#sign-up').on('submit', signUp)
@@ -116,7 +120,8 @@ const handlers = function () {
   $('#new-game').on('click', startGame)
   $('div.box').on('click', updateGame)
   $('#past-games-modal-button').on('click', getPastGames)
-  $('.close').on('click', wipeGames)
+  $('.close, .close-btn').on('click', wipeGames)
+  $('#change-password-modal, #sign-in-modal, #sign-up-modal').on('hidden.bs.modal', clearOnClose)
 }
 
 module.exports = {
