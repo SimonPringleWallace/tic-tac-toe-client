@@ -108,6 +108,7 @@ const wipeGames = function () {
 const handlers = function () {
   $('#sign-in-modal-button').on('click', hideRudeness)
   $('#sign-up').on('submit', signUp)
+  $('#sign-up-modal-button').on('click', hideRudeness)
   $('#sign-in').on('submit', signIn)
   $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePW)
