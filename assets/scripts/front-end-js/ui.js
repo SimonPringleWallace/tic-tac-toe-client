@@ -14,6 +14,7 @@ const signUpSuccess = function () {
 const fail = function () {
   $('#winbox').html('')
   $('#fail').show()
+  $('#sign-up input').val('')
 }
 
 const signInSuccess = function (response) {
