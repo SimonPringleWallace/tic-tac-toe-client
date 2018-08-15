@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Tic Tac Toe</h1>
+      <h3> Game of Your Childhood</h3>
+      <h4>Game of Your Life</h4>
+      <p class="sub-heading"> or <br> chess for those who never grew up </p>
+
+
+<!-- Sign-In Modal -->
+<div class="home">
+       <button type="button" id="sign-in-modal-button" class="btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+         Sign In
+       </button>
+
+       <!-- Modal body -->
+       <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title sign-in-modal" > Sign In </h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+
+             </div>
+             <div class="modal-body">
+               <form id="sign-in">
+                      <input type="text" name="credentials[email]" placeholder="Email">
+                      <input type="password" name="credentials[password]" placeholder="Password">
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="close-btn" data-dismiss="modal">Close</button>
+               <button type="submit"> Get Playin'!</button>
+              </form>
+             </div>
+           </div>
+         </div>
+       </div>
+
+<!-- Sign Up Modal -->
+
+<button type="button" id="sign-up-modal-button" class="btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+  Create Account
+</button>
+
+<!-- Modal body -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title sign-in-modal" > Create Account </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <form id="sign-up">
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="close-btn" data-dismiss="modal">Close</button>
+        <button type="submit"> Create Account!</button>
+       </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ <button id="new-game"> Start! </button>
+
+
+
+<div class="menu">
+
+  <!-- Previous Conquests -->
+
+  <!-- Button trigger modal -->
+  <button type="button" id="past-games-modal-button" data-toggle="modal" data-target="#previous-conquests">
+    Previous Conquests
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="previous-conquests" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="previous-conquests"> Previous Conquests</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul id="games-holder"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="close-btn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+
+  <button type="button" id="change-password-modal-button" class="btn-primary" data-toggle="modal" data-target="#change-password-modal">
+    Change Password
+  </button>
+
+  <!-- Modal body -->
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title change-password-modal" > Change Password </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <input type="password" name="passwords[old]" placeholder="Current Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="close-btn" data-dismiss="modal">Close</button>
+          <button type="submit"> Change it up!</button>
+         </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+         <button id="sign-out"> Sign Out! </button>
+</div>
+
+
+
+
+       <div id="winbox"></div>
+
+       <div id="fail">
+         <p> Someone screwed up.</p>
+         <img src='https://i.imgur.com/luN2Lwj.jpg' alt="boom!">
+         <p> Please try again.</p>
+      </div>
+
+       <div id="board">
+         <div class="container">
+            <div class='row row-one'>
+              <div class="col-xs-2 col-md-4 box" id="0"></div>
+              <div class="col-xs-2 col-md-4 box" id="1"></div>
+              <div class="col-xs-2 col-md-4 box" id="2"></div>
+            </div>
+            <div class="row row-two">
+              <div class="col-xs-2 col-md-4 box" id="3"></div>
+              <div class="col-xs-2 col-md-4 box" id="4"></div>
+              <div class="col-xs-2 col-md-4 box" id="5"></div>
+            </div>
+            <div class="row row-three">
+              <div class="col-xs-2 col-md-4 box" id="6"></div>
+              <div class="col-xs-2 col-md-4 box" id="7"></div>
+              <div class="col-xs-2 col-md-4 box" id="8"></div>
+            </div>
+          </div>
+      </div>
+    </body>
+</html>
